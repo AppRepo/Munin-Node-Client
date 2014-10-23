@@ -1,6 +1,6 @@
 --- #YAML:1.0
 name:                Munin-Node-Client
-version:             0.01
+version:             0.02
 abstract:            Client module for munin nodes.
 license:             ~
 author:              

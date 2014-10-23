@@ -1,5 +1,8 @@
 Revision history for Perl extension Munin::Node::Client.
 
+0.02
+    - fixed infinite loop bug when socked read error occurs (zby)
+
 0.01  Thu Oct 16 09:41:09 2008
 	- original version; provides basic node interfacing. all functions implemented.
 
