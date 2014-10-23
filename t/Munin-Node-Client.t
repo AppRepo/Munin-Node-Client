@@ -5,8 +5,15 @@
 
 # change 'tests => 1' to 'tests => last_test_to_print';
 
-use Test::More tests => 1;
+use Test::More tests => 2;
 BEGIN { use_ok('Munin::Node::Client') };
+
+
+my $node = bless { socket => undef }, 'Munin::Node::Client';
+
+alarm 1;
+$node->read_list();
+ok(1, 'No infinite loop on read error');
 
 #########################
 

@@ -115,7 +115,7 @@ sub read_list {
     my ($self) = @_;
     my @data;
     my $line = $self->read;
-    while($line !~ /^\.$/) {
+    while($line !~ /^\.$/ and defined $line) {
         chomp $line;
         push(@data, $line);
         $line = $self->read;
