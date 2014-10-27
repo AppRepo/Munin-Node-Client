@@ -6,10 +6,10 @@
 # change 'tests => 1' to 'tests => last_test_to_print';
 
 use Test::More tests => 2;
-BEGIN { use_ok('Munin::Node::Client') };
+BEGIN { use_ok('Munin::Node::ClientOpera') };
 
 
-my $node = bless { socket => undef }, 'Munin::Node::Client';
+my $node = bless { socket => undef }, 'Munin::Node::ClientOpera';
 
 alarm 1;
 $node->read_list();

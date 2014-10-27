@@ -1,5 +1,9 @@
-package Munin::Node::Client;
+package Munin::Node::ClientOpera;
 
+# This is a temporary version of Munin::Node::Client with a changed name so that
+# we can package it without conflicts.
+#
+#
 # Name: HealthMatrix
 ## Author: Sebastian Stellingwerff
 ## Copyright: 2008
@@ -9,13 +13,13 @@ package Munin::Node::Client;
 
 =head1 NAME
 
-Munin::Node::Client - Client module for munin nodes.
+Munin::Node::ClientOpera - Client module for munin nodes.
 
 =head1 SYNOPSIS
 
-  use Munin::Node::Client;
+  use Munin::Node::ClientOpera;
 
-  my $node = Munin::Node::Client->connect(Host => '127.0.0.1',
+  my $node = Munin::Node::ClientOpera->connect(Host => '127.0.0.1',
                                           Port => '4949');
 
   my $version    = $node->version;
@@ -26,7 +30,7 @@ Munin::Node::Client - Client module for munin nodes.
 
 =head1 DESCRIPTION
 
-Munin::Node::Client is a client module for munin nodes. This helps simple scripts to talk to munin nodes.
+Munin::Node::ClientOpera is a client module for munin nodes. This helps simple scripts to talk to munin nodes.
 
 =cut
 
@@ -49,11 +53,11 @@ Here all functions are specified, for all functions that return in list context 
 
 =item connect(host => $hostname, port => $port)
 
-Connects to a node and returns an Munin::Node::Client object.
+Connects to a node and returns an Munin::Node::ClientOpera object.
 Currently only support plain connections, ssl and tls are planned.
 Returns undef if connection fails (and $! probably contains something useful).
 Returns false if connection is not a munin connection.
-    my $node = Munin::Node::Client->connect(Host => '127.0.0.1:4949');
+    my $node = Munin::Node::ClientOpera->connect(Host => '127.0.0.1:4949');
 =cut
 sub connect {
     my ($class, %settings) = @_;
